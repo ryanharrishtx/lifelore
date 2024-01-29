@@ -1,3 +1,4 @@
+import JournalEntrySquare from '../Components/JournalEntrySquare/JournalEntrySquare';
 import './Home.css';
 
 const Home = () => {
@@ -5,6 +6,9 @@ const Home = () => {
         <section className='home'>
             <div className='home_journal-container'>
             <h1 className='home_header'>Welcome to your journal!</h1>
+            <div className='home_journal-list'>
+            <JournalEntrySquare />
+            </div>
             </div>
         </section>
     )
