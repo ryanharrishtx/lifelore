@@ -4,7 +4,7 @@ const mongoose = require('mongoose'),
     keys = require('./keys'),
     app = express();
 
-const API_PORT = process.env.PORT || 5000;
+const API_PORT = process.env.PORT || 3005;
 const dbURI = `mongodb+srv://${keys.username}:${keys.password}@cluster0.kjzzpxs.mongodb.net/?retryWrites=true&w=majority`
 
 app.use(express.json());
@@ -17,6 +17,10 @@ const journalSchema = new mongoose.Schema({
     body: String,
     created: {type: Date, default: Date.now}
 });
+
+app.get('/test', async (req, res) => {
+    res.send({ status: 200 });
+})
 
 const Journal = mongoose.model('Journal', journalSchema);
 

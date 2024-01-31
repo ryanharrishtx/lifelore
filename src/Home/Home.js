@@ -2,6 +2,20 @@ import JournalEntrySquare from '../Components/JournalEntrySquare/JournalEntrySqu
 import './Home.css';
 
 const Home = () => {
+
+    const handleClick = async () => {
+        const test = await fetch('/test', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+        })
+        .then(res => res.json())
+
+        console.log(test);
+    }
+
     return (
         <section className='home'>
             <div className='home_journal-container'>
@@ -9,6 +23,7 @@ const Home = () => {
             <div className='home_journal-list'>
             <JournalEntrySquare />
             </div>
+            <button onClick = {() => handleClick()}>TEST</button>
             </div>
         </section>
     )
